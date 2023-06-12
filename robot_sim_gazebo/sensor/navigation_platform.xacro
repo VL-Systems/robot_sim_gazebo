@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<robot name="navigation_planform"
+    xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:arg name="robot_namespace" default="/" />
+    <xacro:arg name="urdf_extras" default="empty.urdf" />
+    <!-- Variables -->
+    <xacro:property name="M_PI" value="3.14159" />
+    <xacro:arg name="gpu" default="false" />
+    <xacro:arg name="lidar" default="false" />
+    <xacro:arg name="camera" default="false" />
+    <xacro:arg name="imu" default="false" />
+    <xacro:arg name="gps" default="false" />
+    <xacro:property name="gpu" value="$(arg gpu)" />
+    <xacro:property name="lidar" value="$(arg lidar)" />
+    <xacro:property name="camera" value="$(arg camera)" />
+    <xacro:property name="imu" value="$(arg imu)" />
+    <xacro:property name="gps" value="$(arg gps)" />
+
+
+    <xacro:if value="${lidar}">
+        <xacro:include filename="$(find robot_sim_gazebo)/sensor/lidar_robot.urdf.xacro"
+            lidar="${lidar}" gpu="${gpu}" />
+    </xacro:if>
+    <xacro:if value="${camera}">
+        <xacro:include filename="$(find robot_sim_gazebo)/sensor/depth_camera.xacro" />
+    </xacro:if>
+    <xacro:if value="${imu}">
+        <xacro:include filename="$(find robot_sim_gazebo)/sensor/imu.xacro" />
+    </xacro:if>
+    <xacro:if value="${gps}">
+        <xacro:include filename="$(find robot_sim_gazebo)/sensor/gps.xacro" />
+    </xacro:if>
+
+
+</robot>

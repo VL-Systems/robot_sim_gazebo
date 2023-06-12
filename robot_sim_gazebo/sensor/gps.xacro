@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="gps">
+
+    <gazebo>
+        <plugin name="novatel_gps_sim" filename="libhector_gazebo_ros_gps.so">
+            <alwaysOn>1</alwaysOn>
+            <updateRate>10.0</updateRate>
+            <bodyName>navigation_planform_link</bodyName>
+            <topicName>gps_fix</topicName>
+            <velocityTopicName>fix_velocity</velocityTopicName>
+            <frameId>navigation_planform_link</frameId>
+            <referenceLatitude>56.6</referenceLatitude>
+            <referenceLongitude>27.9</referenceLongitude>
+            <referenceHeading>0.0</referenceHeading>
+            <referenceAltitude>0.0</referenceAltitude>
+            <drift>5.0 5.0 5.0</drift>
+            <gaussianNoise>0.1 0.1 0.1</gaussianNoise>
+            <driftFrequency>0.1 0.1 0.1</driftFrequency>
+            <velocityDrift>0 0 0</velocityDrift>
+            <velocityGaussianNoise>0.1 0.1 0.1</velocityGaussianNoise>
+        </plugin>
+    </gazebo>
+
+</robot>
