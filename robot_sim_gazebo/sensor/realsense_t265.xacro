@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="t265">
+
+    <xacro:include filename="$(find realsense_ros_gazebo)/xacro/tracker.xacro" />
+
+    <xacro:realsense_T265 sensor_name="camera_t265" parent_link="navigation_planform_link"
+        rate="30.0">
+        <origin rpy="0 0 0.7" xyz="0 0 0" />
+    </xacro:realsense_T265>
+</robot>

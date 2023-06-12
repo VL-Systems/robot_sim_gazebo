@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="d435">
+
+    <xacro:include filename="$(find realsense_ros_gazebo)/xacro/depthcam.xacro" />
+
+    <xacro:realsense_d435 sensor_name="camera_d435" parent_link="navigation_planform_link" rate="10">
+        <origin xyz="0 0 0.5" rpy="0 0 0" />
+    </xacro:realsense_d435>
+</robot>

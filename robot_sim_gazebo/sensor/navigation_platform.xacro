@@ -12,25 +12,39 @@
     <xacro:arg name="camera" default="false" />
     <xacro:arg name="imu" default="false" />
     <xacro:arg name="gps" default="false" />
+    <xacro:arg name="d435" default="false" />
+    <xacro:arg name="t265" default="false" />
     <xacro:property name="gpu" value="$(arg gpu)" />
     <xacro:property name="lidar" value="$(arg lidar)" />
     <xacro:property name="camera" value="$(arg camera)" />
     <xacro:property name="imu" value="$(arg imu)" />
     <xacro:property name="gps" value="$(arg gps)" />
-
+    <xacro:property name="d435" value="$(arg d435)" />
+    <xacro:property name="t265" value="$(arg t265)" />
 
     <xacro:if value="${lidar}">
         <xacro:include filename="$(find robot_sim_gazebo)/sensor/lidar_robot.urdf.xacro"
             lidar="${lidar}" gpu="${gpu}" />
     </xacro:if>
+
     <xacro:if value="${camera}">
         <xacro:include filename="$(find robot_sim_gazebo)/sensor/depth_camera.xacro" />
     </xacro:if>
+
     <xacro:if value="${imu}">
         <xacro:include filename="$(find robot_sim_gazebo)/sensor/imu.xacro" />
     </xacro:if>
+
     <xacro:if value="${gps}">
         <xacro:include filename="$(find robot_sim_gazebo)/sensor/gps.xacro" />
+    </xacro:if>
+
+    <xacro:if value="${d435}">
+        <xacro:include filename="$(find robot_sim_gazebo)/sensor/realsense_d435.xacro" />
+    </xacro:if>
+
+    <xacro:if value="${t265}">
+        <xacro:include filename="$(find robot_sim_gazebo)/sensor/realsense_t265.xacro" />
     </xacro:if>
 
 

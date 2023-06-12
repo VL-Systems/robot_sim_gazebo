@@ -6,7 +6,7 @@
 
     <!-- Spawn dummy robot -->
     <param name="robot_description"
-        command="$(find xacro)/xacro $(find robot_sim_gazebo)/sensor/navigation_platform.xacro gpu:=true lidar:=true camera:=true imu:=true gps:=true" />
+        command="$(find xacro)/xacro $(find robot_sim_gazebo)/sensor/navigation_platform.xacro gpu:=true lidar:=true camera:=false imu:=false gps:=false t265:=false d435:=true " />
     <node pkg="gazebo_ros" type="spawn_model" name="spawn_model"
         args="-urdf -param /robot_description -model lidar_robot" />
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
