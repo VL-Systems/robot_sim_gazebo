@@ -1,6 +1,6 @@
 [submodule "ugv_gazebo_sim"]
 	path = ugv_gazebo_sim
-	url = https://github.com/agilexrobotics/ugv_gazebo_sim
+	url = git@github.com:agilexrobotics/ugv_gazebo_sim.git
 [submodule "realsense_ros_gazebo"]
 	path = realsense_ros_gazebo
-	url = https://github.com/nilseuropa/realsense_ros_gazebo
+	url = git@github.com:nilseuropa/realsense_ros_gazebo.git
